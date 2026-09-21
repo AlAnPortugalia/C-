@@ -1,0 +1,25 @@
+#include <LiquidCrystal_I2C.h>  // подключаем библу
+#include <NewPing.h>
+
+#define HC_TRIG 3
+#define HC_ECHO 2
+
+NewPing sonar(HC_TRIG, HC_ECHO, 100);
+LiquidCrystal_I2C lcd(0x27, 20, 4);  // адрес, столбцов, строк
+void setup() {
+  Serial.begin(9600);
+  lcd.init();           // инициализация
+  lcd.backlight();      // включить подсветку  
+  lcd.setCursor(1, 0);  // столбец 1 строка 0
+  lcd.print("Test ");
+  analogReference(EXTERNAL);  
+}
+void loop() {
+  /*float dist = sonar.ping_cm();
+  delay(50);
+  lcd.setCursor(0, 0);
+  lcd.print(dist);
+  delay(500);
+  lcd.clear();*/
+    Serial.println(analogRead(0));
+}
