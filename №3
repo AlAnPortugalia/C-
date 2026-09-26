@@ -1,0 +1,31 @@
+#include <iostream>
+int main() 
+{
+    int a {1000};
+    int x;
+    std::cout << "Number one" << std::endl;
+    std::cin >> x;
+    int y;
+    std::cout << "Number two" << std::endl;
+    std::cin >> y;
+    int s = x + y;
+    int p = x * y;
+    if (x <= a && y <= a) {
+        std::cout << s << std::endl;
+        std::cout << p << std::endl;
+    }
+    else {
+        std::cout << "error";
+    }
+    std::cout << "your number" << std::endl;
+    int b;
+    std::cin >> b;
+    int c;
+    std::cin >> c;
+    if (b + c == s && b * c == p) {
+        std::cout << "Thanks" << std::endl;
+    }
+    else {
+        std::cout << "wrong" << std::endl;
+    }
+}
