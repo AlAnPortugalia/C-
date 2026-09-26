@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int n; //колличество
+    cin >> n;
+    int m; //литра
+    cin >> m;
+    int k; //нужно
+    cin >> k;
+    if (n * m == k) {
+        cout << n << " * " << m << " = " << k << endl;
+        cout << "Yes";
+    }
+    else {
+        cout << n << " * " << m << " = " << k << endl;
+        cout << "No";
+    }
+}
