@@ -1,0 +1,24 @@
+
+#include <iostream>
+
+int main() {
+    int n;
+    std::cin >> n;
+    const int max = 100;
+    if (n <= 0) {
+        std::cout << "error";
+    }
+
+    if (n > max) {
+        std::cout << "error";
+    }
+
+    int mass[max] {};  
+    int sum = 0;
+
+    for (int i {0}; i < n; ++i) {
+        mass[i] = i + 1;    
+        sum += mass[i];   
+    }
+    std::cout << sum ;  
+}
