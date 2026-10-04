@@ -1,0 +1,12 @@
+//Сформировать строку из 10 символов. 
+//На четных позициях должны находится четные цифры, на нечетных позициях – буквы.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    string s = "";
+    s.append("a2b4c6d8e10");
+    cout << s;
+}
