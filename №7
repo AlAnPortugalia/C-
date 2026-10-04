@@ -1,0 +1,16 @@
+//Дана строка. Если она начинается на ‘abc’, то заменить их на ‘www’, иначе добавить в конец строки ‘zzz’.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    string s = "absd";
+    if (s[0] == 'a' && s[1] == 'b' && s[2] == 'c') {
+        s.replace(0, 3, "xxx");
+    }
+    else {
+        s.append("zzz");
+    }
+    cout << s;
+}
