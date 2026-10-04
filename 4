@@ -1,0 +1,14 @@
+//Дана строка. Вывести первый, последний и средний символы.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    string s = "abcd";
+    cout << s.front() << endl;
+    cout << s.back() << endl;
+    int a = s.size();
+    int len = a / 2;
+    cout << s[len] << endl;
+}
