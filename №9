@@ -1,0 +1,16 @@
+//вводиться строка, какое колличество символов, и если внутри слова
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    string s = "";
+    cout << s.size() << endl;
+    if ( s.empty() == false) {
+        cout << "True";
+    }
+    else {
+        cout << "False";
+    }
+}
