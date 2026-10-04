@@ -1,0 +1,16 @@
+//Дана строка. Вставить после каждого символа пробел.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    int i {0};
+    string s = "abcdefg";
+    int len = s.size();
+    for (; i<=len;) {
+        ++i;
+        s.insert(i, " ");
+    }
+    cout << s;
+}
