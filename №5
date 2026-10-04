@@ -1,0 +1,27 @@
+//Дана строка. Вывести первые три символа и последний три символа, если длина строки больше 5.
+//Иначе вывести первый символ столько раз, какова длина строки.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    int i {0};
+    string s = "";
+    int len = s.size();
+    int a = len - 2;
+    int b = len - 3;
+    if (len == 0) {
+        cout << "Строка пустая";
+    }
+    if (s.size() <= 5) {
+        cout << s[0] << s[1] << s[2] << endl;
+        cout << s.back() << s[a] << s[b] << endl;
+    }
+    else {
+        while (i < 5) {
+            cout << s.front();
+            i++;
+        }
+    }
+}
