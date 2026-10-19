@@ -1,0 +1,19 @@
+//Реализовать алгоритм Дан список из 20 чисел. Найти максимум и минимум. 
+//Если максимум и минимум имеют одинаковую четность, вывести среднее арифметическое. 
+//ИСПОЛЬЗОВАТЬ ТОЛЬКО ОДИН ЦИКЛ!!!
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() 
+{
+    std::vector<int> numbers {3, 17, 8, 22, 5, 10, 1, 19, 14, 7,
+                              31, 13, 6, 25, 9, 2, 11, 28, 4, 20};
+    std::cout << "Min: " << *std::min_element(begin(numbers), end(numbers)) << std::endl;
+    int a = *std::min_element(begin(numbers), end(numbers));
+    std::cout << "Max: " << *std::max_element(begin(numbers), end(numbers)) << std::endl;
+    int b = *std::max_element(begin(numbers), end(numbers));
+    if (a%2==0 && b%2==0 || a%2==1 && b%2==1) {
+        std::cout << (a + b) / 2;
+    }
+}
