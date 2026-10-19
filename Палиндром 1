@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+#include <string>
+int main() {
+    string s = "";
+    cin >> s;
+    int a =  s.length();
+    cout <<(s.empty() ? "Да" : "Нет") << endl;
+    if (a % 2 == 0){
+        if (s[0] == s.back() && s[1] == s[s.size() - 2] && s[2] == s[s.size() - 3] && s[2] == s[2] && s[3] == s[3] && s[1] == s[1]) {
+            cout << "Полиндром" << endl;
+        }
+    }
+}
+
