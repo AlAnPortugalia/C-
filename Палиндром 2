@@ -1,9 +1,25 @@
 #include <iostream>
-using namespace std;
 #include <string>
+#include <cctype>   // для tolower, isalpha
+#include <map>      // для подсчёта букв
+
+using namespace std;
+
 int main() {
-    string s = "";
-    cin >> s;
+    string s = "Hello, my name alan and ";
+
+        string cleaned;
+    for (char c : s) {
+        if (isalpha(static_cast<unsigned char>(c))) {
+            cleaned += tolower(static_cast<unsigned char>(c));
+        }
+    }
+
+    if (cleaned.empty()) {
+        cout << "Строка не содержит букв.\n";
+        return 0;
+    }
+
     int a =  s.length();
     cout <<(s.empty() ? "Да" : "Нет") << endl;
     if (a % 2 == 0){
@@ -11,5 +27,15 @@ int main() {
             cout << "Полиндром" << endl;
         }
     }
-c
+    map<char, int> counts;
+    for (char c : cleaned) {
+        counts[c]++;
+    }
+
+    cout << "Статистика букв:\n";
+    for (const auto& p : counts) {
+        cout << p.first << ": " << p.second << "\n";
+    }
+
+    return 0;
 }
