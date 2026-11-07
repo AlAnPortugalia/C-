@@ -5,23 +5,23 @@
 //K - Конь
 //P - Пешка
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
     const int n = 8;
     char board[n][n];
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             board[i][j] = '.';
         }
     }
 
     int row = 2;
     int col = 3;
-    char shape = 'Q';
+    string color = "black";
+    char shape = 'P';
 
     if (shape == 'R') {
         for (int i = 0; i < n; i++) {
@@ -49,7 +49,7 @@ int main() {
         }
     }
 
-    else if (shape == 'K') {
+    if (shape == 'K') {
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 if ((i - row == -2 && j - col == -1) || (i - row == -2 && j - col == 1) ||
@@ -58,36 +58,48 @@ int main() {
                     (i - row == 2 && j - col == -1) || (i - row == 2 && j - col == 1)) {
                     board[i][j] = '*';
                 }
-            }
-        }
-    }
-    else if (shape == 'P') {
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (i == row + 1 && j == col) {
-                    board[i][j] = '*';
-                }
-                if (row == 1 && i == row + 2 && j == col) {
-                    board[i][j] = '*';
-                }
-                if (i == row - 1 && j == col) {
-                    board[i][j] = '*';
-                }
-                if (row == 1 && i == row - 2 && j == col) {
-                    board[i][j] = '*';
+                if (row == i && col == j) {
+                    board[i][j] = shape;
                 }
             }
         }
     }
-    
-    else if (shape == 'Q') {
+
+    if (color == "black") {
+        if (shape == 'P') {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    if ((i == row - 1 || i == row - 2) && j == col) {
+                        board[i][j] = '*';
+                    }
+                    if (row == i && col == j) {
+                        board[i][j] = shape;
+                    }
+                }
+            }
+        }
+    }
+
+    if (color == "white") {
+        if (shape == 'P') {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    if ((i == row + 1 || i == row + 2) && j == col) {
+                        board[i][j] = '*';
+                    }
+                    if (row == i && col == j) {
+                        board[i][j] = shape;
+                    }
+                }
+            }
+        }
+    }
+
+    if (shape == 'Q') {
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (row == i && col != j || row != i && col == j) {
                     board[i][j] = '*';
-                }
-                if (row == i && col == j) {
-                    board[i][j] = shape;
                 }
                 if (i - j == row - col || j + i == row + col) {
                     board[i][j] = '*';
@@ -98,11 +110,15 @@ int main() {
             }
         }
     }
-    else if (shape == 'L') {
+
+    if (shape == 'L') {
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 if ((i - row >= -1 && i - row <= 1) && (j - col >= -1 && j - col <= 1) && ((i - row != 0) || (j - col != 0))) {
                     board[i][j] = '*';
+                }
+                if (row == i && col == j) {
+                    board[i][j] = shape;
                 }
             }
         }
